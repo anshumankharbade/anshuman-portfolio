@@ -6,6 +6,7 @@ export default function Skills() {
         {[
           "HTML5",
           "CSS3",
+          "Tailwind CSS",
           "JavaScript (ES6+)",
           "React.js",
           "Node.js",
@@ -22,3 +23,4 @@ export default function Skills() {
     </section>
   );
 }
+
