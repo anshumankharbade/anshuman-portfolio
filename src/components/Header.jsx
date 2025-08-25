@@ -6,10 +6,10 @@ export default function Header() {
       <h1 className="text-4xl max-md:text-2xl font-bold">ANSHUMAN KHARBADE</h1>
       <p className="mt-2 text-lg">Web Developer | MERN Stack Enthusiast</p>
       <nav className="mt-4 space-x-6">
-        <a href="#skills" className=" hover:text-blue-700 px-4 py-2 bg-white hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-2xl text-gray-900 dark:text-white">Skills</a>
-        <a href="#projects" className=" hover:text-blue-700 px-4 py-2 bg-white hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-2xl text-gray-900 dark:text-white">Projects</a>
-        <a href="#resume" className=" hover:text-blue-700 px-4 py-2 bg-white hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-2xl text-gray-900 dark:text-white">Resume</a>
-        <a href="#contact" className=" hover:text-blue-700 px-4 py-2 bg-white hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-2xl text-gray-900 dark:text-white">Contact</a>
+        <a href="#skills" className=" hover:text-blue-500 px-4 py-2 bg-white hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-2xl text-gray-900 dark:text-white">Skills</a>
+        <a href="#projects" className=" hover:text-blue-500 px-4 py-2 bg-white hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-2xl text-gray-900 dark:text-white">Projects</a>
+        <a href="#resume" className=" hover:text-blue-500 px-4 py-2 bg-white hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-2xl text-gray-900 dark:text-white">Resume</a>
+        <a href="#contact" className=" hover:text-blue-500 px-4 py-2 bg-white hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-2xl text-gray-900 dark:text-white">Contact</a>
       </nav>
       <div className="absolute top-4 right-4">
         <ThemeToggle />
@@ -17,3 +17,4 @@ export default function Header() {
     </header>
   );
 }
+
