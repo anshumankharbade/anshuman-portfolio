@@ -26,23 +26,3 @@ The website is designed to showcase projects, skills, and contact details with s
 ## 📸 Preview
 👉 [Live Demo](https://anshuman-portfolio-iota.vercel.app/) *(replace with your deployed link)*  
 
----
-
-## 📂 Installation & Setup
-To run this project locally:
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/portfolio.git
-
-# Navigate to the project folder
-cd portfolio
-
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
