@@ -15,8 +15,9 @@ export default function App() {
       
 
       <footer className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-800 dark:hover:bg-gray-950 text-white text-center py-4 mt-6 max-md:text-sm">
-        <p>© 2025 Anshuman Kharbade | Built with ❤️ using React & Tailwind</p>
+        <p className="w-[80%] m-auto">© 2025 Anshuman Kharbade | Built with ❤️ using React & Tailwind</p>
       </footer>
     </div>
   );
 }
+
