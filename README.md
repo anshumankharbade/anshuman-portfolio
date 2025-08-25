@@ -24,5 +24,5 @@ The website is designed to showcase projects, skills, and contact details with s
 ---
 
 ## 📸 Preview
-👉 [Live Demo](https://anshuman-portfolio-iota.vercel.app/) *(replace with your deployed link)*  
+👉 [Live Demo](https://anshuman-portfolio-iota.vercel.app/)
 
