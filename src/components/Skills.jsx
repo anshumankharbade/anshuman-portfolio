@@ -8,14 +8,19 @@ export default function Skills() {
           "CSS3",
           "Tailwind CSS",
           "JavaScript (ES6+)",
+          "MongoDB",
+          "Express.js",
           "React.js",
           "Node.js",
-          "Express.js",
-          "MongoDB",
+          "Next.js",
           "Git & GitHub",
           "REST APIs",
+          ,
         ].map((skill, i) => (
-          <span key={i} className="px-4 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-xl">
+          <span
+            key={i}
+            className="px-4 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-xl"
+          >
             {skill}
           </span>
         ))}
@@ -23,4 +28,3 @@ export default function Skills() {
     </section>
   );
 }
-
