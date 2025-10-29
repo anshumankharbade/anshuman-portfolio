@@ -3,7 +3,7 @@ export default function Projects() {
     {
       title: "🎵 Spotify Clone",
       desc: "Front-end clone of Spotify with audio playback, play/pause, progress bar, and responsive design.",
-      demo: "https://your-spotify-demo-link.com",
+      demo: "https://spotify-clone-3oxp.vercel.app/",
       code: "https://github.com/anshumankharbade/Spotify-clone",
     },
     {
@@ -13,10 +13,10 @@ export default function Projects() {
       code: "https://github.com/anshumankharbade/Currency-Converter",
     },
     {
-      title: "🛒 E-Commerce Cart (MERN) - (Under construction)",
-      desc: "Shopping cart with product listing, add/remove cart functionality, backend with Node & MongoDB.",
-      demo: "https://your-cart-demo-link.com",
-      code: "https://github.com/yourusername/ecommerce-cart",
+      title: "🔐 LockR",
+      desc: "A secure and responsive password manager built with React, offering local credential storage with copy, edit, and delete functionality.",
+      demo: "https://lockr-pi.vercel.app/",
+      code: "https://github.com/anshumankharbade/lockr",
     },
   ];
 
@@ -25,13 +25,26 @@ export default function Projects() {
       <h2 className="text-2xl font-semibold mb-4">Projects</h2>
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((project, i) => (
-          <div key={i} className="shadow-lg rounded-2xl p-5 bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
+          <div
+            key={i}
+            className="shadow-lg rounded-2xl p-5 bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700"
+          >
             <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-3">{project.desc}</p>
-            <a href={project.demo} target="_blank" className="text-blue-600 font-medium mr-3 hover:underline">
+            <p className="text-gray-700 dark:text-gray-300 mb-3">
+              {project.desc}
+            </p>
+            <a
+              href={project.demo}
+              target="_blank"
+              className="text-blue-600 font-medium mr-3 hover:underline"
+            >
               Live Demo
             </a>
-            <a href={project.code} target="_blank" className="text-blue-600 font-medium hover:underline">
+            <a
+              href={project.code}
+              target="_blank"
+              className="text-blue-600 font-medium hover:underline"
+            >
               GitHub
             </a>
           </div>
