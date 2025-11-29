@@ -1,16 +1,63 @@
-# React + Vite
+# 🌐 Personal Portfolio — Anshuman Kharbade
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, fully responsive developer portfolio showcasing my skills, projects, and experience with a **dark glassmorphic design**, **cinematic animations**, and **smooth section navigation**.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- ⚡ Built with **React + Tailwind CSS**
+- 🎬 Smooth animations using **Framer Motion**
+- 📱 Fully responsive — mobile, tablet & desktop
+- 🔗 Section-based navbar with active link scroll
+- 🔥 Neon hover effects & interactive UI
+- 🧩 Modular and reusable components
+- 📬 Contact section with working form (demo)
+- 🌑 Modern **dark theme with blur effects**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
+| Frontend | Styling | Animation | Icons |
+|----------|---------|-----------|--------|
+| React    | Tailwind CSS | Framer Motion | Lucide Icons |
 
-## React Compiler
+## 📸 Pages Included
+| Section | Purpose |
+|---------|---------|
+| Hero | Intro + Call to Action |
+| About | Professional Summary |
+| Skills | Tech Stack & Expertise |
+| Projects | Major Projects with Live Demo & GitHub |
+| Contact | Form + Social Links |
+| Footer | Copyright |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 Folder Structure
+```
+src/
+ ┣ components/
+ ┃ ┣ Navbar.jsx
+ ┃ ┣ Hero.jsx
+ ┃ ┣ About.jsx
+ ┃ ┣ Skills.jsx
+ ┃ ┣ Projects.jsx
+ ┃ ┣ Contact.jsx
+ ┃ ┗ Footer.jsx
+ ┣ App.jsx
+ ┗ index.css
+```
 
-## Expanding the ESLint configuration
+## 🔧 Setup
+```bash
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🌍 Live Link
+🔗 *Add once deployed (e.g., Vercel / Netlify)*
+
+---
+
+## 📫 Contact
+📩 Email — **anshumankharbade28@gmail.com**  
+🐙 GitHub — **https://github.com/anshumankharbade**  
+💼 LinkedIn — **https://www.linkedin.com/in/anshuman-kharbade/**
+
+---
+
+### ⭐ If you like this project, consider giving it a star on GitHub!
