@@ -36,7 +36,7 @@ export default function Navbar() {
   const scrollTo = (id) => {
     isUserScroll.current = true;
     setScrolling(true);
-    setActiveSection(id); // Immediately update active section
+    setActiveSection(id);
 
     const el = document.getElementById(id);
     if (el) {
@@ -45,7 +45,6 @@ export default function Navbar() {
         block: "start",
       });
 
-      // Reset scrolling state after a short delay
       setTimeout(() => {
         setScrolling(false);
         isUserScroll.current = false;
@@ -59,7 +58,6 @@ export default function Navbar() {
     let timeoutId;
 
     const handleScroll = () => {
-      // Don't update active section if user just clicked a nav link
       if (isUserScroll.current) return;
 
       clearTimeout(timeoutId);
@@ -109,8 +107,8 @@ export default function Navbar() {
               className="flex items-center gap-3 cursor-pointer"
               onClick={() => scrollTo("hero")}
             >
-              <div className="w-12 h-12 rounded-xl bg-black/50 border border-white/10 flex items-center justify-center">
-                <span className="bg-gradient-to-r from-[#f5c518] to-yellow-400 bg-clip-text text-transparent font-bold text-xl">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-black/50 border border-white/10 flex items-center justify-center">
+                <span className="bg-gradient-to-r from-[#f5c518] to-yellow-400 bg-clip-text text-transparent font-bold text-lg sm:text-xl">
                   AK
                 </span>
               </div>
@@ -183,13 +181,13 @@ export default function Navbar() {
             <motion.button
               onClick={toggle}
               whileTap={{ scale: 0.9 }}
-              className="md:hidden p-2.5 rounded-lg bg-black/50 border border-white/10 text-white hover:bg-[#f5c518]/10 transition-all duration-300"
+              className="md:hidden p-2 rounded-lg bg-black/50 border border-white/10 text-white hover:bg-[#f5c518]/10 transition-all duration-300"
               aria-label="Toggle menu"
             >
               {open ? (
-                <FaTimes className="w-6 h-6" />
+                <FaTimes className="w-5 h-5" />
               ) : (
-                <FaBars className="w-6 h-6" />
+                <FaBars className="w-5 h-5" />
               )}
             </motion.button>
           </div>
@@ -200,7 +198,7 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <>
-            {/* bg black */}
+            {/* Background overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -210,7 +208,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
             />
 
-            {/* menu header */}
+            {/* Mobile menu panel */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -219,21 +217,21 @@ export default function Navbar() {
                 duration: 0.3,
                 ease: "easeInOut",
               }}
-              className="fixed top-0 right-0 h-full w-80 z-50 md:hidden"
+              className="fixed top-0 right-0 h-full w-full max-w-sm z-50 md:hidden"
             >
-              <div className="h-full bg-black/95 border-l border-white/10">
+              <div className="h-full bg-black/95 border-l border-white/10 overflow-y-auto">
                 {/* Menu Header */}
-                <div className="p-6 border-b border-white/10">
+                <div className="p-5 border-b border-white/10 sticky top-0 bg-black/95 backdrop-blur-xl">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-black/50 border border-white/10 flex items-center justify-center">
-                        <span className="bg-gradient-to-r from-[#f5c518] to-yellow-400 bg-clip-text text-transparent font-bold text-xl">
+                      <div className="w-10 h-10 rounded-xl bg-black/50 border border-white/10 flex items-center justify-center">
+                        <span className="bg-gradient-to-r from-[#f5c518] to-yellow-400 bg-clip-text text-transparent font-bold text-lg">
                           AK
                         </span>
                       </div>
                       <div>
                         <div className="text-white font-bold">Anshuman</div>
-                        <div className="text-sm text-gray-400">
+                        <div className="text-xs sm:text-sm text-gray-400">
                           Full Stack Developer
                         </div>
                       </div>
@@ -248,8 +246,8 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                {/* menu links */}
-                <div className="p-6 space-y-2">
+                {/* Menu links */}
+                <div className="p-5 space-y-2">
                   {links.map((link, index) => (
                     <motion.button
                       key={link.id}
@@ -276,7 +274,9 @@ export default function Navbar() {
                       >
                         {link.icon}
                       </div>
-                      <span className="font-medium">{link.name}</span>
+                      <span className="font-medium text-sm sm:text-base">
+                        {link.name}
+                      </span>
                       {activeSection === link.id && (
                         <div className="ml-auto w-2 h-2 rounded-full bg-[#f5c518]" />
                       )}
@@ -285,7 +285,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Social & Resume */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-white/10">
+                <div className="p-5 border-t border-white/10 mt-auto">
                   <div className="space-y-4">
                     <div className="flex justify-center gap-4">
                       <motion.a
@@ -295,7 +295,7 @@ export default function Navbar() {
                         whileTap={{ scale: 0.9 }}
                         className="p-3 rounded-xl bg-black/50 border border-white/10 text-gray-400 hover:text-[#f5c518] hover:border-[#f5c518]/30 transition-all duration-300"
                       >
-                        <FaGithub className="w-6 h-6" />
+                        <FaGithub className="w-5 h-5 sm:w-6 sm:h-6" />
                       </motion.a>
                       <motion.a
                         href="https://linkedin.com/in/anshumankharbade"
@@ -304,7 +304,7 @@ export default function Navbar() {
                         whileTap={{ scale: 0.9 }}
                         className="p-3 rounded-xl bg-black/50 border border-white/10 text-gray-400 hover:text-[#f5c518] hover:border-[#f5c518]/30 transition-all duration-300"
                       >
-                        <FaLinkedin className="w-6 h-6" />
+                        <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6" />
                       </motion.a>
                     </div>
 
