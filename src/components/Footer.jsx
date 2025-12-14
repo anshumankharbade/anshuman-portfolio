@@ -23,7 +23,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Back to Top Button */}
+          {/* Back to Top btn */}
           <button
             onClick={scrollToTop}
             className="px-4 py-3 rounded-xl bg-black border border-white/10 text-gray-300 hover:text-[#f5c518] hover:border-[#f5c518]/30 transition-all duration-200"
@@ -41,3 +41,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
