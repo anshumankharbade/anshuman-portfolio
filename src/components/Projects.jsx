@@ -16,8 +16,78 @@ import {
 } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 
-// Project data 
+// Project data
 const PROJECTS_DATA = [
+  {
+    title: "Nirmalaitours - Car Rental Booking Platform",
+    desc: "Full-stack car rental platform with customer booking and admin management system.",
+    longDesc:
+      "A comprehensive MERN stack car rental platform serving Nagpur and surrounding areas. Customers can browse available vehicles, calculate real-time pricing, book cars for local or outstation trips, and receive instant WhatsApp confirmations. The platform features a powerful admin dashboard for fleet management, booking oversight, customer insights, and notification management.",
+    tags: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express",
+      "JWT Auth",
+      "Tailwind CSS",
+      "Mongoose",
+      "REST API",
+      "React Router",
+      "Netlify",
+      "Render",
+      "Vite",
+    ],
+    live: "https://nirmalaitours.netlify.app",
+    github: "https://github.com/anshumankharbade/nirmalaitours",
+    backend: "https://github.com/anshumankharbade/nirmalaitours/backend",
+    featured: true,
+    views: 280,
+    gradient: "from-orange-500/20 to-red-500/20",
+    metrics: [
+      {
+        label: "Active Users",
+        value: "500+",
+        icon: "<FaUsers />",
+        color: "text-green-400",
+      },
+      {
+        label: "Booking Response",
+        value: "<1s",
+        icon: "<FaBolt />",
+        color: "text-blue-400",
+      },
+      {
+        label: "Uptime",
+        value: "99.9%",
+        icon: "<FaServer />",
+        color: "text-yellow-400",
+      },
+      {
+        label: "WhatsApp Integration",
+        value: "Instant",
+        icon: "<FaWhatsapp />",
+        color: "text-green-400",
+      },
+    ],
+    challenges: [
+      "Implementing real-time price calculation with dynamic extra km and overnight halt charges",
+      "Building a responsive admin dashboard with comprehensive booking management",
+      "Integrating WhatsApp API for instant booking confirmations",
+      "Handling complex date validation for same-day outstation trips",
+      "Managing CORS and deployment configurations across Netlify and Render",
+    ],
+    screenshots: ["/images/nirmalaitours.png", "/images/nirmalaitours.png"],
+    features: [
+      "Customer car browsing with detailed specifications and real-time availability",
+      "Smart price calculator with base fare, extra km, driver allowance, and halt charges",
+      "Secure user authentication with JWT and role-based access (customer/admin)",
+      "Admin dashboard with fleet management, booking oversight, and revenue tracking",
+      "Instant WhatsApp booking confirmations with detailed trip information",
+      "Booking history with status tracking and cancellation requests",
+      "Responsive design optimized for mobile, tablet, and desktop",
+      "Notification system for real-time booking updates",
+    ],
+  },
   {
     title: "QikMeds - Healthcare Platform",
     desc: "Full-stack healthcare app with medicine management, doctor consultations & pharmacy services.",
@@ -135,59 +205,6 @@ const PROJECTS_DATA = [
       "Password strength indicator",
       "Search and filter capabilities",
       "Dark/Light theme support",
-    ],
-  },
-  {
-    title: "Spotify Clone",
-    desc: "Front-end clone of Spotify with audio playback, play/pause, progress bar, and responsive design.",
-    longDesc:
-      "A fully functional Spotify interface clone with interactive audio player, playlist management, and responsive layout. Implements music playback controls, progress tracking, and a visually accurate UI matching Spotify's design system.",
-    tags: [
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "Audio API",
-      "Responsive Design",
-      "Grid Layout",
-    ],
-    live: "https://spotify-clone-3oxp.vercel.app/",
-    github: "https://github.com/anshumankharbade/Spotify-clone",
-    featured: true,
-    views: 120,
-    gradient: "from-green-500/20 to-emerald-500/20",
-    metrics: [
-      {
-        label: "Performance",
-        value: "95%",
-        icon: <FaBolt />,
-        color: "text-green-400",
-      },
-      {
-        label: "Accessibility",
-        value: "100%",
-        icon: <FaEye />,
-        color: "text-blue-400",
-      },
-      {
-        label: "Page Speed",
-        value: "A+",
-        icon: <FaServer />,
-        color: "text-yellow-400",
-      },
-    ],
-    challenges: [
-      "Implementing smooth audio playback controls",
-      "Recreating Spotify's complex UI accurately",
-      "Making it fully responsive across devices",
-    ],
-    screenshots: ["/images/spotify.jpg", "/images/spotify.jpg"],
-    features: [
-      "Interactive audio player",
-      "Play/pause/seek controls",
-      "Progress bar with time tracking",
-      "Responsive grid layout",
-      "Simulated playlist functionality",
-      "Search functionality",
     ],
   },
   {
@@ -383,7 +400,7 @@ const OptimizedImage = React.memo(
         )}
       </div>
     );
-  }
+  },
 );
 
 OptimizedImage.displayName = "OptimizedImage";
@@ -512,7 +529,7 @@ const ProjectCard = React.memo(
         </div>
       </motion.div>
     );
-  }
+  },
 );
 
 ProjectCard.displayName = "ProjectCard";
@@ -526,7 +543,7 @@ const ProjectDetailModal = React.memo(
           onClose();
         }
       },
-      [onClose]
+      [onClose],
     );
 
     const animationProps = useMemo(() => {
@@ -740,7 +757,7 @@ const ProjectDetailModal = React.memo(
         </motion.div>
       </motion.div>
     );
-  }
+  },
 );
 
 ProjectDetailModal.displayName = "ProjectDetailModal";
