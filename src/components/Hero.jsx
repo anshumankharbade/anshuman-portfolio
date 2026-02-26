@@ -6,8 +6,9 @@ import React, {
   useRef,
 } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaArrowDown, FaCode } from "react-icons/fa";
+import { FaArrowDown, FaCode } from "react-icons/fa";
 import { IoSparkles } from "react-icons/io5";
+import { SOCIAL_LINKS } from "../constants/social";
 
 // bg img
 const HERO_IMAGE = "https://images.unsplash.com/photo-1562813733-b31f71025d54";
@@ -15,20 +16,6 @@ const HERO_IMAGE = "https://images.unsplash.com/photo-1562813733-b31f71025d54";
 // gen opt image URLs
 const getImageUrl = (quality = 40, width = 800, format = "webp") =>
   `${HERO_IMAGE}?ixlib=rb-4.1.0&auto=format&fit=crop&q=${quality}&w=${width}&format=${format}`;
-
-// Social links
-const SOCIAL_LINKS = [
-  {
-    icon: <FaGithub className="w-5 h-5" />,
-    href: "https://github.com/anshumankharbade",
-    label: "GitHub profile",
-  },
-  {
-    icon: <FaLinkedin className="w-5 h-5" />,
-    href: "https://linkedin.com/in/anshumankharbade",
-    label: "LinkedIn profile",
-  },
-];
 
 const Hero = ({ prefersReducedMotion }) => {
   const [isVisible, setIsVisible] = useState(false);

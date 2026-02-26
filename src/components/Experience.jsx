@@ -10,6 +10,8 @@ import {
   FaCodeBranch,
 } from "react-icons/fa";
 import { IoRocket, IoGitNetwork } from "react-icons/io5";
+import SectionHeader from "../constants/ui/SectionHeader";
+
 
 const Experience = () => {
   const experiences = [
@@ -143,41 +145,11 @@ const Experience = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <div className="inline-flex items-center gap-3 mb-4">
-            <div className="w-12 h-[2px] bg-gradient-to-r from-transparent to-[#f5c518]" />
-            <span className="text-[#f5c518] font-semibold tracking-widest text-sm uppercase">
-              Development Journey
-            </span>
-            <div className="w-12 h-[2px] bg-gradient-to-l from-transparent to-[#f5c518]" />
-          </div>
-
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-6xl font-extrabold mb-6"
-          >
-            <span className="bg-gradient-to-r from-[#f5c518] via-yellow-300 to-[#f5c518] bg-clip-text text-transparent">
-              Experience
-            </span>
-          </motion.h3>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-400 text-lg max-w-2xl mx-auto"
-          >
-            Hands-on learning through building real projects
-          </motion.p>
-        </motion.div>
-
+        <SectionHeader
+  subtitle="Development Journey"
+  title="Experience"
+  description="Hands-on learning through building real projects"
+/>
         {/* Timeline */}
         <div className="max-w-5xl mx-auto">
           <div className="relative">

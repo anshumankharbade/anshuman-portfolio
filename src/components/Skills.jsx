@@ -1,148 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaNodeJs,
-  FaGitAlt,
-  FaChartLine,
-  FaRocket,
-} from "react-icons/fa";
-import { SiTailwindcss, SiExpress, SiMongodb, SiPostman } from "react-icons/si";
-import { TbApi } from "react-icons/tb";
+import { FaChartLine, FaRocket } from "react-icons/fa";
+import { skillCategories } from "../constants/skills";
+import SectionHeader from "../constants/ui/SectionHeader";
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      category: "Frontend Development",
-      icon: "💻",
-      color: "from-blue-500/20 to-cyan-500/20",
-      proficiency: "Advanced",
-      skills: [
-        {
-          name: "HTML5",
-          icon: <FaHtml5 />,
-          level: 92,
-          color: "#E34F26",
-          proficiency: "Expert",
-          description: "Semantic markup, accessibility",
-        },
-        {
-          name: "CSS3",
-          icon: <FaCss3Alt />,
-          level: 90,
-          color: "#1572B6",
-          proficiency: "Expert",
-          description: "Flexbox, Grid, responsive design",
-        },
-        {
-          name: "JavaScript",
-          icon: <FaJs />,
-          level: 88,
-          color: "#F7DF1E",
-          proficiency: "Advanced",
-          description: "ES6+, Async/Await, APIs",
-        },
-        {
-          name: "React.js",
-          icon: <FaReact />,
-          level: 86,
-          color: "#61DAFB",
-          proficiency: "Advanced",
-          description: "Hooks, Context API",
-        },
-        {
-          name: "Tailwind CSS",
-          icon: <SiTailwindcss />,
-          level: 90,
-          color: "#06B6D4",
-          proficiency: "Expert",
-          description: "Utility-first, responsive",
-        },
-      ],
-    },
-    {
-      category: "Backend & Databases",
-      icon: "⚙️",
-      color: "from-purple-500/20 to-pink-500/20",
-      proficiency: "Intermediate",
-      skills: [
-        {
-          name: "Node.js",
-          icon: <FaNodeJs />,
-          level: 75,
-          color: "#339933",
-          proficiency: "Intermediate",
-          description: "REST APIs, NPM",
-        },
-        {
-          name: "Express.js",
-          icon: <SiExpress />,
-          level: 72,
-          color: "#000000",
-          proficiency: "Intermediate",
-          description: "Middleware, routing",
-        },
-        {
-          name: "MongoDB",
-          icon: <SiMongodb />,
-          level: 70,
-          color: "#47A248",
-          proficiency: "Intermediate",
-          description: "CRUD operations",
-        },
-        {
-          name: "REST APIs",
-          icon: <TbApi />,
-          level: 85,
-          color: "#FF6B6B",
-          proficiency: "Advanced",
-          description: "Design, documentation",
-        },
-      ],
-    },
-    {
-      category: "Tools & Technologies",
-      icon: "🛠️",
-      color: "from-green-500/20 to-emerald-500/20",
-      proficiency: "Proficient",
-      skills: [
-        {
-          name: "Git & GitHub",
-          icon: <FaGitAlt />,
-          level: 80,
-          color: "#F05032",
-          proficiency: "Advanced",
-          description: "Version control",
-        },
-        {
-          name: "VS Code",
-          level: 95,
-          color: "#007ACC",
-          proficiency: "Expert",
-          description: "Extensions, debugging",
-        },
-        {
-          name: "Postman",
-          icon: <SiPostman />,
-          level: 85,
-          color: "#FF6C37",
-          proficiency: "Advanced",
-          description: "API testing",
-        },
-        {
-          name: "Responsive Design",
-          level: 92,
-          color: "#F5C518",
-          proficiency: "Expert",
-          description: "Mobile-first, performance",
-        },
-      ],
-    },
-  ];
-
   const proficiencyLevels = {
     Beginner: {
       color: "text-blue-400",
@@ -182,47 +44,18 @@ const Skills = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <div className="inline-flex items-center gap-3 mb-4">
-            <div className="w-8 h-[2px] bg-gradient-to-r from-transparent to-[#f5c518]" />
-            <span className="text-[#f5c518] font-semibold tracking-widest text-sm uppercase">
-              Technical Skills
-            </span>
-            <div className="w-8 h-[2px] bg-gradient-to-l from-transparent to-[#f5c518]" />
-          </div>
-
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl md:text-5xl font-extrabold mb-4"
-          >
-            <span className="bg-gradient-to-r from-[#f5c518] via-yellow-300 to-[#f5c518] bg-clip-text text-transparent">
-              Skills & Proficiency
-            </span>
-          </motion.h3>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-400 text-base max-w-2xl mx-auto"
-          >
-            Detailed breakdown of my technical skills with proficiency levels
-          </motion.p>
-        </motion.div>
+        <SectionHeader
+          subtitle="Technical Skills"
+          title="Skills & Proficiency"
+          description="Detailed breakdown of my technical skills with proficiency levels"
+        />
 
         {/* Skills Grid */}
         <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {skillCategories.map((category, index) => {
             const averageLevel = Math.round(
               category.skills.reduce((acc, skill) => acc + skill.level, 0) /
-                category.skills.length
+                category.skills.length,
             );
 
             return (

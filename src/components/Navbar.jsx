@@ -14,16 +14,7 @@ import {
   FaLinkedin,
   FaDownload,
 } from "react-icons/fa";
-
-const links = [
-  { id: "hero", name: "Home", icon: <FaHome size={18} /> },
-  { id: "about", name: "About", icon: <FaUser size={18} /> },
-  { id: "experience", name: "Experience", icon: <FaBriefcase size={18} /> },
-  { id: "education", name: "Education", icon: <FaGraduationCap size={18} /> },
-  { id: "projects", name: "Projects", icon: <FaFolderOpen size={18} /> },
-  { id: "skills", name: "Skills", icon: <FaCode size={18} /> },
-  { id: "contact", name: "Contact", icon: <FaEnvelope size={18} /> },
-];
+import { links } from "../constants/navigation";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);

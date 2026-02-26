@@ -9,6 +9,7 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 import { IoMailOpen, IoCheckmarkCircle } from "react-icons/io5";
+import SectionHeader from "../constants/ui/SectionHeader";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -87,40 +88,11 @@ export default function Contact() {
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-[#f5c518]/5 to-transparent rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <div className="inline-flex items-center gap-3 mb-4">
-            <div className="w-12 h-[2px] bg-gradient-to-r from-transparent to-[#f5c518]" />
-            <span className="text-[#f5c518] font-semibold tracking-widest text-sm uppercase">
-              Get In Touch
-            </span>
-            <div className="w-12 h-[2px] bg-gradient-to-l from-transparent to-[#f5c518]" />
-          </div>
-
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-6xl font-extrabold mb-6"
-          >
-            <span className="bg-gradient-to-r from-[#f5c518] via-yellow-300 to-[#f5c518] bg-clip-text text-transparent">
-              Contact Me
-            </span>
-          </motion.h3>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-400 text-lg max-w-2xl mx-auto"
-          >
-            Let's discuss your project or just say hello!
-          </motion.p>
-        </motion.div>
+        <SectionHeader
+          subtitle="Get In Touch"
+          title="Contact Me"
+          description="Let's discuss your project or just say hello!"
+        />
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Left Column*/}
