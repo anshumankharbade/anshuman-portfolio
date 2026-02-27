@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaChartLine, FaRocket } from "react-icons/fa";
 import { skillCategories } from "../constants/skills";
-import SectionHeader from "../constants/ui/SectionHeader";
+import SectionHeader from "./ui/SectionHeader";
 
 const Skills = () => {
   const proficiencyLevels = {

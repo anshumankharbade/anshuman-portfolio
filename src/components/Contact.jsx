@@ -9,7 +9,7 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 import { IoMailOpen, IoCheckmarkCircle } from "react-icons/io5";
-import SectionHeader from "../constants/ui/SectionHeader";
+import SectionHeader from "./ui/SectionHeader";
 
 export default function Contact() {
   const [formData, setFormData] = useState({

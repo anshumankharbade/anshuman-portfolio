@@ -8,7 +8,7 @@ import {
   FaRocket,
 } from "react-icons/fa";
 import { IoSparkles } from "react-icons/io5";
-import SectionHeader from "../constants/ui/SectionHeader";
+import SectionHeader from "./ui/SectionHeader";
 
 export default function About() {
   const skills = [

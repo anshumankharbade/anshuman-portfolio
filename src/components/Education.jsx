@@ -10,7 +10,7 @@ import {
   FaCalculator,
 } from "react-icons/fa";
 import { IoMdSchool } from "react-icons/io";
-import SectionHeader from "../constants/ui/SectionHeader";
+import SectionHeader from "./ui/SectionHeader";
 
 export default function Education() {
   const educationDetails = [

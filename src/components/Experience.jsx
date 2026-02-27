@@ -10,7 +10,7 @@ import {
   FaCodeBranch,
 } from "react-icons/fa";
 import { IoRocket, IoGitNetwork } from "react-icons/io5";
-import SectionHeader from "../constants/ui/SectionHeader";
+import SectionHeader from "./ui/SectionHeader";
 
 
 const Experience = () => {
