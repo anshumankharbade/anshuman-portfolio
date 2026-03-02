@@ -49,7 +49,7 @@ npm run dev
 ```
 
 ## 🌍 Live Link
-🔗 https://anshuman-portfolio-iota.vercel.app/
+🔗 https://anshumankharbade.netlify.app/
 
 ---
 
