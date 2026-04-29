@@ -10,6 +10,76 @@ import {
 
 export const PROJECTS_DATA = [
   {
+    title: "Sheen - Salon Booking Platform",
+    desc: "Full-stack salon booking platform with real-time availability, stylist management, and secure admin dashboard.",
+    longDesc:
+      "A complete booking system for salons and studios. Customers can browse services, view stylist profiles, and book time slots with instant conflict prevention. The admin panel provides full CRUD for services and stylists, plus booking status management. Built with modern tech stack and deployed for production.",
+    tags: [
+      "React",
+      "Vite",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Tailwind CSS",
+      "React Router",
+      "Mongoose",
+      "REST API",
+      "Netlify",
+      "Render",
+      "JWT-like Token Auth",
+    ],
+    live: "https://sheensalon.netlify.app",
+    github: "https://github.com/anshumankharbade/sheen",
+    featured: true,
+    views: 150,
+    gradient: "from-amber-500/20 to-yellow-500/20",
+    metrics: [
+      {
+        label: "Active Users",
+        value: "100+",
+        icon: <FaUsers />,
+        color: "text-green-400",
+      },
+      {
+        label: "Booking Response",
+        value: "<0.5s",
+        icon: <FaBolt />,
+        color: "text-blue-400",
+      },
+      {
+        label: "Uptime",
+        value: "99.9%",
+        icon: <FaServer />,
+        color: "text-yellow-400",
+      },
+      {
+        label: "Mobile Ready",
+        value: "100%",
+        icon: <FaMobileAlt />,
+        color: "text-purple-400",
+      },
+    ],
+    challenges: [
+      "Implementing real-time availability check to prevent double-booking across stylists and time slots",
+      "Securing admin panel with server-side token verification (never exposed to frontend)",
+      "Handling CORS correctly when frontend (Netlify) and backend (Render) are on separate domains",
+      "Fixing React Router 404 on refresh with Netlify redirects",
+      "Upgrading Vite configuration for compatibility with modern bundling (manualChunks function)",
+    ],
+    screenshots: ["/images/sheen.jpg", "/images/sheen.jpg"],
+    features: [
+      "Customer service browsing with prices, durations, and images",
+      "Stylist profiles with assigned services and bios",
+      "Real-time booking conflict detection (prevents double-booking same stylist/date/time)",
+      "Secure admin login using token (validated server-side, never client-side)",
+      "Admin dashboard: create, edit, delete services and stylists",
+      "Admin booking management: view all bookings and update status (pending/confirmed/cancelled)",
+      "Glass-morphic UI with smooth animations and responsive design",
+      "Instant feedback messages for booking success/errors",
+      "Deployed on Netlify (frontend) + Render (backend) + MongoDB Atlas",
+    ],
+  },
+  {
     title: "Nirmalaitours - Car Rental Booking Platform",
     desc: "Full-stack car rental platform with customer booking and admin management system.",
     longDesc:
@@ -308,7 +378,7 @@ export const PROJECTS_DATA = [
 ];
 
 export const STATS = [
-  { label: "Total Projects", value: "8+", color: "text-[#f5c518]" },
+  { label: "Total Projects", value: "9+", color: "text-[#f5c518]" },
   { label: "Code Hours", value: "800+", color: "text-green-400" },
   { label: "Technologies", value: "15+", color: "text-blue-400" },
 ];
