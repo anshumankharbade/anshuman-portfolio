@@ -1,0 +1,554 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/fonts/plus-jakarta-sans-latin.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  /* preloaded in index.html; "optional" guarantees no layout shift if it ever arrives late */
+  font-display: optional;
+}
+
+@theme inline {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-warm: var(--warm);
+}
+
+@property --bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #eaf0fb;
+}
+@property --ink {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #0e1530;
+}
+@property --ink-soft {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #37426a;
+}
+@property --ink-faint {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #53607e;
+}
+@property --accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #2d5bdb;
+}
+@property --accent-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #7a4fe0;
+}
+@property --glass-fill {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255,255,255,0.6);
+}
+@property --glass-scrim {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+@property --glass-inner {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255,255,255,0.55);
+}
+@property --glass-border {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255,255,255,0.15);
+}
+@property --glass-hairline {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(14,21,48,0.08);
+}
+@property --veil {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255,255,255,0.25);
+}
+@property --panel-scrim {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255,255,255,0.3);
+}
+@property --scroll-thumb {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(14,21,48,0.32);
+}
+@property --spot {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(90,120,255,0.16);
+}
+@property --rim {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(90,120,255,0.55);
+}
+@property --blob-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #8fb8ff;
+}
+@property --blob-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #c4aeff;
+}
+@property --blob-3 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ffc9a8;
+}
+@property --title-from {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #0e1530;
+}
+@property --title-to {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #3a4a86;
+}
+@property --title-shadow {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(60,90,200,0.22);
+}
+@property --halo {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255,176,66,0.55);
+}
+@property --halo-ink {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #b45f06;
+}
+@property --shadow-hi {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255,255,255,0.9);
+}
+@property --shadow-c {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(46,70,150,0.28);
+}
+@property --shadow-hi-h {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255,255,255,0.95);
+}
+@property --shadow-c-h {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(46,70,150,0.4);
+}
+@property --blob-opacity {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0.85;
+}
+
+
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #eaf0fb;
+  --ink: #0e1530;
+  --ink-soft: #37426a;
+  --ink-faint: #53607e;
+  --accent: #2d5bdb;
+  --accent-2: #7a4fe0;
+  --warm: #f5c518;
+
+  --btn-from: #2f5ee6;
+  --btn-to: #6b3fe6;
+
+  /* Liquid glass */
+  --glass-blur: 20px;
+  --glass-fill: rgba(255, 255, 255, 0.6);
+  --glass-scrim: transparent;
+  --glass-inner: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-hairline: rgba(14, 21, 48, 0.08);
+  --shadow-hi: rgba(255, 255, 255, 0.9);
+  --shadow-c: rgba(46, 70, 150, 0.28);
+  --shadow-hi-h: rgba(255, 255, 255, 0.95);
+  --shadow-c-h: rgba(46, 70, 150, 0.4);
+  --glass-shadow: inset 0 1px 0 var(--shadow-hi), 0 14px 40px -16px var(--shadow-c);
+  --glass-shadow-hover: inset 0 1px 0 var(--shadow-hi-h), 0 26px 56px -18px var(--shadow-c-h);
+  --veil: rgba(255, 255, 255, 0.25);
+  --panel-scrim: rgba(255, 255, 255, 0.3);
+  --scroll-thumb: rgba(14, 21, 48, 0.32);
+  --spot: rgba(90, 120, 255, 0.16);
+  --rim: rgba(90, 120, 255, 0.55);
+
+  /* Ambient light */
+  --blob-1: #8fb8ff;
+  --blob-2: #c4aeff;
+  --blob-3: #ffc9a8;
+  --blob-opacity: 0.85;
+
+  --title-from: #0e1530;
+  --title-to: #3a4a86;
+  --title-shadow: rgba(60, 90, 200, 0.22);
+
+  /* Theme toggle halo */
+  --halo: rgba(255, 176, 66, 0.55);
+  --halo-ink: #b45f06;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0a0f21;
+  --ink: #f2f4ff;
+  --ink-soft: #cbd2ec;
+  --ink-faint: #b0bade;
+  --accent: #9eb8ff;
+  --accent-2: #b79bff;
+
+  --glass-fill: rgba(255, 255, 255, 0.05);
+  /* keeps text at WCAG AA even where a bright ambient light sits right behind a card */
+  --glass-scrim: rgba(7, 11, 28, 0.4);
+  --glass-inner: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-hairline: rgba(255, 255, 255, 0.06);
+  --shadow-hi: rgba(255, 255, 255, 0.14);
+  --shadow-c: rgba(0, 0, 0, 0.65);
+  --shadow-hi-h: rgba(255, 255, 255, 0.2);
+  --shadow-c-h: rgba(0, 0, 0, 0.8);
+  /* dialogs: neutral so the frosted glass shows the blurred page, not a coloured slab */
+  --veil: rgba(0, 0, 0, 0.25);
+  --panel-scrim: rgba(8, 9, 13, 0.66);
+  --scroll-thumb: rgba(255, 255, 255, 0.3);
+  --spot: rgba(150, 175, 255, 0.14);
+  --rim: rgba(190, 205, 255, 0.55);
+
+  --blob-1: #3358e6;
+  --blob-2: #7340f5;
+  --blob-3: #0b9a8f;
+  --blob-opacity: 0.45;
+
+  --title-from: #ffffff;
+  --title-to: #aeb9e6;
+  --title-shadow: rgba(110, 150, 255, 0.35);
+
+  --halo: rgba(143, 168, 255, 0.5);
+  --halo-ink: #cfd9ff;
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+html {
+  scroll-padding-top: 6.5rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 35%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.65rem 1rem;
+  border-radius: 9999px;
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 700;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Liquid glass                                                        */
+/* ------------------------------------------------------------------ */
+@utility glass {
+  background: linear-gradient(var(--glass-fill), var(--glass-fill)), var(--glass-scrim);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), 0 0 0 1px var(--glass-hairline);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.35);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.35);
+}
+
+/* Dialogs: the same frosted glass as the header, with a neutral scrim so text stays readable over bright screenshots */
+@utility glass-panel {
+  background: linear-gradient(var(--glass-fill), var(--glass-fill)), var(--panel-scrim);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), 0 0 0 1px var(--glass-hairline);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.35);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.35);
+}
+
+/* Blur-only backdrop behind a dialog: no colour tint, just a very light neutral dim */
+@utility glass-veil {
+  background: var(--veil);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+/* A lighter surface for tiles nested inside a glass card (no second blur: it costs a lot and shows nothing) */
+@utility glass-inner {
+  background: var(--glass-inner);
+  box-shadow: 0 0 0 1px var(--glass-hairline), inset 0 1px 0 color-mix(in oklab, white 25%, transparent);
+}
+
+/* Cursor-following inner light + rim light. --mx / --my are set by <GlassCard>. */
+@utility spotlight {
+  position: relative;
+  transition: box-shadow 0.35s ease;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+  &::before {
+    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), var(--spot), transparent 65%);
+  }
+  &::after {
+    padding: 1px;
+    background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 0%), var(--rim), transparent 70%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  }
+  &:hover,
+  &:focus-within {
+    box-shadow: var(--glass-shadow-hover), 0 0 0 1px var(--glass-hairline);
+  }
+  &:hover::before,
+  &:hover::after,
+  &:focus-within::before,
+  &:focus-within::after {
+    opacity: 1;
+  }
+}
+
+/* Depth titles: gradient fill + soft light drop shadow */
+@utility title-gradient {
+  background-image: linear-gradient(180deg, var(--title-from) 15%, var(--title-to) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 6px 16px var(--title-shadow));
+}
+@utility title-accent {
+  background-image: linear-gradient(120deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 4px 12px var(--title-shadow));
+}
+
+/* Slim rounded scrollbar for scrolling glass surfaces (dialog, mobile menu) */
+.glass-scroll::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+.glass-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: 22px; /* keeps the thumb clear of the rounded corners */
+}
+.glass-scroll::-webkit-scrollbar-thumb {
+  min-height: 48px;
+  border: 4px solid transparent;
+  border-radius: 9999px;
+  background-color: var(--scroll-thumb);
+  background-clip: content-box;
+  transition: background-color 0.2s;
+}
+.glass-scroll::-webkit-scrollbar-thumb:hover,
+.glass-scroll::-webkit-scrollbar-thumb:active {
+  background-color: color-mix(in oklab, var(--accent) 70%, transparent);
+  background-clip: content-box;
+}
+.glass-scroll::-webkit-scrollbar-button {
+  display: none;
+}
+/* Firefox has no ::-webkit-scrollbar, so it gets the standard properties */
+@supports not selector(::-webkit-scrollbar) {
+  .glass-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-thumb) transparent;
+  }
+}
+
+/* Autofill should not paint a white box over the glass */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-text-fill-color: var(--ink);
+  caret-color: var(--ink);
+  transition: background-color 99999s ease-out;
+}
+
+/* ------------------------------------------------------------------ */
+/* Ambient background: 3 big radial lights drifting on the compositor  */
+/* ------------------------------------------------------------------ */
+.ambient-blob {
+  position: absolute;
+  border-radius: 9999px;
+  opacity: var(--blob-opacity);
+  background: radial-gradient(closest-side, var(--blob-c), transparent 72%);
+  will-change: transform;
+}
+.ambient-blob--1 {
+  --blob-c: var(--blob-1);
+  width: 78vmax;
+  height: 78vmax;
+  left: -26vmax;
+  top: -30vmax;
+  animation: drift-a 30s ease-in-out infinite alternate;
+}
+.ambient-blob--2 {
+  --blob-c: var(--blob-2);
+  width: 70vmax;
+  height: 70vmax;
+  right: -28vmax;
+  top: 8vmax;
+  animation: drift-b 36s ease-in-out infinite alternate;
+}
+.ambient-blob--3 {
+  --blob-c: var(--blob-3);
+  width: 64vmax;
+  height: 64vmax;
+  left: 10vmax;
+  bottom: -34vmax;
+  animation: drift-c 42s ease-in-out infinite alternate;
+}
+@keyframes drift-a {
+  to { transform: translate3d(16vmax, 12vmax, 0) scale(1.15); }
+}
+@keyframes drift-b {
+  to { transform: translate3d(-14vmax, 16vmax, 0) scale(0.9); }
+}
+@keyframes drift-c {
+  to { transform: translate3d(20vmax, -10vmax, 0) scale(1.2); }
+}
+
+/* ------------------------------------------------------------------ */
+/* Motion helpers                                                      */
+/* ------------------------------------------------------------------ */
+/* Hero entrance: transform-only, so text is visible from first paint (opacity:0 would delay LCP).
+   "backwards" releases the transform afterwards so hover springs can use it. */
+@keyframes rise {
+  from { transform: translateY(14px); }
+  to { transform: translateY(0); }
+}
+.rise {
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+
+html {
+  scroll-behavior: auto;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Theme switch: the whole palette fades. ThemeProvider adds this class for about 1.4 s           */
+/* ------------------------------------------------------------------ */
+html.theme-anim {
+  transition-property: --bg, --ink, --ink-soft, --ink-faint, --accent, --accent-2, --glass-fill, --glass-scrim, --glass-inner, --glass-border, --glass-hairline, --veil, --panel-scrim, --scroll-thumb, --spot, --rim, --blob-1, --blob-2, --blob-3, --title-from, --title-to, --title-shadow, --halo, --halo-ink, --shadow-hi, --shadow-c, --shadow-hi-h, --shadow-c-h, --blob-opacity;
+  transition-duration: 0.9s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Theme toggle: a soft halo that responds in kind (warm sun in light mode, cool moon in dark mode) */
+.theme-toggle::before,
+.theme-toggle::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 9999px;
+  pointer-events: none;
+}
+/* the glow that swells on hover and pulses on press */
+.theme-toggle::before {
+  inset: -10px;
+  /* a soft ring that hugs the button, so the icon on its face keeps its contrast */
+  background: radial-gradient(closest-side, transparent 40%, var(--halo) 68%, transparent 100%);
+  opacity: 0.5;
+  transform: scale(1);
+  transition: opacity 0.45s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.theme-toggle:hover::before,
+.theme-toggle:focus-visible::before {
+  opacity: 1;
+  transform: scale(1.35);
+}
+.theme-toggle:active::before {
+  opacity: 1;
+  transform: scale(1.7);
+}
+/* a slow idle breath */
+.theme-toggle::after {
+  inset: -3px;
+  box-shadow: 0 0 14px 2px var(--halo);
+  opacity: 0.25;
+  animation: halo-breathe 4s ease-in-out infinite;
+}
+@keyframes halo-breathe {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}

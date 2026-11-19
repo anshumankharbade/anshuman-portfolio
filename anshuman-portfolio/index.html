@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anshuman Kharbade – Full Stack Developer (MERN)</title>
+    <meta
+      name="description"
+      content="Portfolio of Anshuman Kharbade, a Full Stack Developer and MERN specialist with 2+ years of experience shipping production web apps. Projects, skills and contact."
+    />
+    <meta name="theme-color" content="#0a0f21" />
+    <link rel="canonical" href="https://anshumankharbade.netlify.app/" />
+
+    <!-- Sets the theme before first paint (saved choice, else the OS setting) so there is no flash -->
+    <script>
+      (function () {
+        var t = "dark";
+        try {
+          var saved = localStorage.getItem("theme");
+          t = saved === "light" || saved === "dark" ? saved : matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        } catch (e) {}
+        document.documentElement.dataset.theme = t;
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute("content", t === "light" ? "#eaf0fb" : "#0a0f21");
+      })();
+    </script>
+
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://anshumankharbade.netlify.app/" />
+    <meta property="og:title" content="Anshuman Kharbade – Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="Full Stack Developer and MERN specialist with 2+ years of experience. Projects, skills and contact."
+    />
+    <!-- Link preview card (public/og-image.jpg, 1200x630). Social platforms need an absolute URL. -->
+    <meta property="og:image" content="https://anshumankharbade.netlify.app/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Anshuman Kharbade, Full Stack Developer, with screenshots of two of his projects"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image:alt"
+      content="Anshuman Kharbade, Full Stack Developer, with screenshots of two of his projects"
+    />
+  </head>
+
+  <body>
+    <!--
+      Netlify Forms detects forms at deploy time by reading the static HTML, so the
+      contact form (rendered by React in Contact.jsx) needs this hidden twin.
+      Field names must match Contact.jsx.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="topic" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+# dependencies (restored by `npm install`)
+node_modules/
+
+# build output (Netlify runs `npm run build` itself)
+dist/
+bundle-analysis.html
+
+# local environment files and secrets
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+npm-debug.log*
+
+# editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Netlify CLI local state
+.netlify/
